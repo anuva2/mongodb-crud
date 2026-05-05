@@ -2,9 +2,9 @@ services:
   app:
     build: .
     ports:
-      - '3001:3000'
+      - '5001:5000'
     environment:
-      - PORT=3000
+      - PORT=5000
       - MONGO_URI=mongodb://mongo:27017/library_db
     depends_on:
       - mongo
@@ -15,7 +15,7 @@ services:
     volumes:
       - mongo-data:/data/db
     ports:
-      - '27017:27017'
+      - '27018:27017'
 
 volumes:
   mongo-data:

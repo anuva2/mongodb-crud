@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ── DATABASE ─────────────────────────────────────────────
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/library_db';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27018/library_db';
 
 mongoose.connect(MONGO_URI)
   .then(() => console.log(`✅  MongoDB connected → ${MONGO_URI}`))
@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 });
 
 // ── START ────────────────────────────────────────────────
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`\n🚀  Server running at http://localhost:${PORT}`);
   console.log(`\n📚  API endpoints:`);

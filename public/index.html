@@ -119,7 +119,9 @@
 </div>
 
 <script>
-const API = 'http://localhost:3000/api';
+// Dynamically construct API URL based on current page location
+// Works for both direct node execution (localhost:5000) and Docker Compose (localhost:5001)
+const API = `${window.location.protocol}//${window.location.host}/api`;
 
 // ── state ─────────────────────────────────────────────
 let authors = [], genres = [], books = [];
